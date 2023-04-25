@@ -4,22 +4,38 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    
+    HealthController healthController;
     Transform player;
     [SerializeField]
     float enemySpeed, nearbydistance, Gobackspeed;
     Vector3 StartPosition; // Current position of the enemy is stored here
 
+    private RaycastHit hit;
+    private string enemyTag;
+
+    [SerializeField]
+    private float damage;
+
+    private BetterPlayerMovement playerScript;
+    private GameObject sword;
+
+    private GameObject Player;
+
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
+        playerScript = Player.GetComponent<BetterPlayerMovement>();
+        sword = GameObject.FindGameObjectWithTag("Sword");
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartPosition = transform.position;
+        healthController = GetComponent<HealthController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         nearbydistance = Vector3.Distance(transform.position, player.position);
         if(nearbydistance <= 8f) 
         {
@@ -29,6 +45,8 @@ public class EnemyAI : MonoBehaviour
         {
             GoBackToPatrol();
         }
+
+        
     }
 
     void Chase() 
@@ -42,5 +60,13 @@ public class EnemyAI : MonoBehaviour
         transform.LookAt(StartPosition);
         transform.position = Vector3.Lerp(transform.position, StartPosition, Gobackspeed);
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == sword && playerScript.doAttack)
+        {
+            healthController.ApplyDamage(damage);
+        }
     }
 }
