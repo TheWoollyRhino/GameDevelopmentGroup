@@ -1452,7 +1452,7 @@ MonoBehaviour:
   enemySpeed: 5
   nearbydistance: 0
   Gobackspeed: 0.001
-  damage: 5
+  damage: 30
 --- !u!114 &1007460283
 MonoBehaviour:
   m_ObjectHideFlags: 0
