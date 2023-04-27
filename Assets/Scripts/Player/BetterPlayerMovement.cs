@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class BetterPlayerMovement : MonoBehaviour
 {
+    
     OwnPlayer controls;
     private Camera mainCam;
     [HideInInspector] public float health;
@@ -54,6 +55,8 @@ public class BetterPlayerMovement : MonoBehaviour
     private float attackTimer;
     private float attackCooldown;
     
+
+
     private Animator playerAnimator;
 
     //0 Idle
@@ -75,6 +78,7 @@ public class BetterPlayerMovement : MonoBehaviour
         mainCam = Camera.main;
         playerAnimator = GetComponent<Animator>();
         playerRB = GetComponent<Rigidbody>();
+        
         
         followCamera = Camera.main;
         offsetZ = -7;
@@ -100,6 +104,8 @@ public class BetterPlayerMovement : MonoBehaviour
         
         controls.Player.Attack.performed += ctx => attacking = ctx.ReadValue<float>();
         controls.Player.Attack.canceled += ctx => attacking = 0.0f;
+
+        
     }
 
     private void Start()
@@ -144,8 +150,13 @@ public class BetterPlayerMovement : MonoBehaviour
                 doAttack = false;
                 attackTimer = attackCooldown;
             }
+
+
         }
     }
+
+    
+
 
     private void Death()
     {
