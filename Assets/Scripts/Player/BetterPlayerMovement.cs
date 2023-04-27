@@ -10,14 +10,14 @@ public class BetterPlayerMovement : MonoBehaviour
     OwnPlayer controls;
     private Camera mainCam;
     [HideInInspector] public float health;
-    
+
     // Movement
     private Vector2 move;
     private float speed = 10;
     private float playerRotation;
     private Rigidbody playerRB;
     Quaternion endRotation;
-    
+
     //Jump
     private float jump;
     private float jumpDistance = 10;
@@ -47,13 +47,13 @@ public class BetterPlayerMovement : MonoBehaviour
     private float joystickGap;
     private Vector3 xAxis;
     private Camera splineCamera;
-    
+
     //Combat
     private float attacking;
-   [HideInInspector] public bool doAttack;
+    [HideInInspector] public bool doAttack;
     private float attackTimer;
     private float attackCooldown;
-    
+
     private Animator playerAnimator;
 
     //0 Idle
@@ -67,15 +67,14 @@ public class BetterPlayerMovement : MonoBehaviour
     private void Awake()
     {
         health = 100;
-        
+
         attackCooldown = 0.6f;
         attackTimer = attackCooldown;
 
-//        splineCamera = GameObject.Find("SplineCamera").GetComponent<Camera>();
         mainCam = Camera.main;
         playerAnimator = GetComponent<Animator>();
         playerRB = GetComponent<Rigidbody>();
-        
+
         followCamera = Camera.main;
         offsetZ = -7;
         offsetY = 5;
@@ -85,7 +84,7 @@ public class BetterPlayerMovement : MonoBehaviour
 
         //Using Unity's new Input System
         controls = new OwnPlayer();
-        
+
         controls.Player.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
         controls.Player.Move.canceled += ctx => move = Vector2.zero;
 
@@ -97,7 +96,7 @@ public class BetterPlayerMovement : MonoBehaviour
 
         controls.Player.CameraMove.performed += ctx => cameraVector = ctx.ReadValue<Vector2>();
         controls.Player.CameraMove.canceled += ctx => cameraVector = Vector2.zero;
-        
+
         controls.Player.Attack.performed += ctx => attacking = ctx.ReadValue<float>();
         controls.Player.Attack.canceled += ctx => attacking = 0.0f;
     }
@@ -109,23 +108,12 @@ public class BetterPlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (mainCam.enabled == true)
-        {
-            PlayerControlsUpdate();
-            CameraFollow();
-            PowerUps();
-            Jumping();
-            Attacking();
-            Death();
-        }
-
-        else if (splineCamera.enabled)
-        {
-            PowerUps();
-            Jumping();
-            Attacking();
-            PlayerControlsUpdate();
-        }
+        PlayerControlsUpdate();
+        CameraFollow();
+        PowerUps();
+        Jumping();
+        Attacking();
+        Death();
     }
 
     private void Attacking()
@@ -157,7 +145,7 @@ public class BetterPlayerMovement : MonoBehaviour
 
     private void Jumping()
     {
-  
+
         if (currentJump == 0)
         {
             jumping = false;
@@ -177,8 +165,8 @@ public class BetterPlayerMovement : MonoBehaviour
             jumpButton = true;
             jumping = false;
         }
-        
-        if (jumping == true )
+
+        if (jumping == true)
         {
             playerAnimator.SetInteger("CurrentState", 1);
             playerRB.velocity = new Vector3(playerRB.velocity.x, jumpDistance, 0);
@@ -193,8 +181,8 @@ public class BetterPlayerMovement : MonoBehaviour
                 jumping = false;
             }
         }
-        
-        if (grounded == false && jump == 0) 
+
+        if (grounded == false && jump == 0)
         {
             currentJump = jumpMax;
         }
@@ -205,7 +193,7 @@ public class BetterPlayerMovement : MonoBehaviour
         if (action > 0)
         {
             //Debug.Log("Playing");
-            playerAnimator.SetInteger("CurrentState", 4); 
+            playerAnimator.SetInteger("CurrentState", 4);
         }
 
         if (movementPU == true)
@@ -213,7 +201,7 @@ public class BetterPlayerMovement : MonoBehaviour
             movementPUTimer += Time.deltaTime;
             if (movementPUTimer > 5)
             {
-                speed = speed/2;
+                speed = speed / 2;
                 movementPU = false;
             }
         }
@@ -223,11 +211,11 @@ public class BetterPlayerMovement : MonoBehaviour
     {
         //Following Player
         xAxis = followCamera.transform.TransformDirection(cameraVector.y, 0.0f, 0.0f);
-        
-        cameraDistance = new Vector3(transform.position.x + offsetX, transform.position.y + offsetY, 
+
+        cameraDistance = new Vector3(transform.position.x + offsetX, transform.position.y + offsetY,
             transform.position.z + offsetZ);
         followCamera.transform.position = cameraDistance;
-      
+
 
         //Rotation
         if (cameraVector.x < -joystickGap || cameraVector.x > joystickGap)
@@ -235,28 +223,28 @@ public class BetterPlayerMovement : MonoBehaviour
             followCamera.transform.RotateAround(transform.position,
                 new Vector3(0.0f, cameraVector.x, 0.0f), rotationSpeed * Time.deltaTime);
         }
-        
-         if (-cameraVector.y < -joystickGap || -cameraVector.y > joystickGap)
-         {
-             if (followCamera.transform.eulerAngles.x > 5 &&
-                 followCamera.transform.eulerAngles.x < 45)
-             {
-                 followCamera.transform.RotateAround(transform.position,
-                     -xAxis, rotationSpeed * Time.deltaTime);
-             }
-             // Going Down
-             else if (followCamera.transform.eulerAngles.x < 5 && -cameraVector.y > 0)
-             {
-                 followCamera.transform.RotateAround(transform.position,
+
+        if (-cameraVector.y < -joystickGap || -cameraVector.y > joystickGap)
+        {
+            if (followCamera.transform.eulerAngles.x > 5 &&
+                followCamera.transform.eulerAngles.x < 45)
+            {
+                followCamera.transform.RotateAround(transform.position,
                     -xAxis, rotationSpeed * Time.deltaTime);
-             }
-             //Going Up
-             else if (followCamera.transform.eulerAngles.x > 45 && -cameraVector.y < 0)
-             {
-                 followCamera.transform.RotateAround(transform.position,
-                    -xAxis, rotationSpeed * Time.deltaTime);
-             }
-         }
+            }
+            // Going Down
+            else if (followCamera.transform.eulerAngles.x < 5 && -cameraVector.y > 0)
+            {
+                followCamera.transform.RotateAround(transform.position,
+                   -xAxis, rotationSpeed * Time.deltaTime);
+            }
+            //Going Up
+            else if (followCamera.transform.eulerAngles.x > 45 && -cameraVector.y < 0)
+            {
+                followCamera.transform.RotateAround(transform.position,
+                   -xAxis, rotationSpeed * Time.deltaTime);
+            }
+        }
 
         offsetZ = followCamera.transform.position.z - transform.position.z;
         offsetX = followCamera.transform.position.x - transform.position.x;
@@ -281,9 +269,9 @@ public class BetterPlayerMovement : MonoBehaviour
                 grounded = true;
             }
         }
-        
+
         // Joystick gap ensure that the player does not accidentally touch the joystick
-        if (move.x < -joystickGap || move.x > joystickGap || move.y < -joystickGap || move.y > joystickGap )
+        if (move.x < -joystickGap || move.x > joystickGap || move.y < -joystickGap || move.y > joystickGap)
         {
             // Ensuring it takes into account the camera when moving
             cameraForward = followCamera.transform.forward;//y axis
@@ -303,25 +291,11 @@ public class BetterPlayerMovement : MonoBehaviour
             }
             else
             {
-                if (mainCam.enabled == true)
-                {
-                    endRotation = Quaternion.Euler(new Vector3(0.0f, playerRotation, 0.0f));
-                    transform.rotation =
-                        Quaternion.Lerp(transform.rotation, endRotation, 6 * Time.deltaTime); // Ensure this happens
-                    //Debug.Log(playerRotation);
-                }
-                else if (splineCamera.enabled)
-                {
-                    if (playerRotation < 100 && playerRotation > -120)
-                    {
-                        transform.rotation = Quaternion.Euler(new Vector3(0.0f, 0, 0.0f));
-                    }
-                   else 
-                    {
-                        transform.rotation = Quaternion.Euler(new Vector3(0.0f, 180, 0.0f));
-                    }
 
-                }
+                endRotation = Quaternion.Euler(new Vector3(0.0f, playerRotation, 0.0f));
+                transform.rotation =
+                    Quaternion.Lerp(transform.rotation, endRotation, 6 * Time.deltaTime); // Ensure this happens
+                                                                                          //Debug.Log(playerRotation);
 
                 // transform.rotation = Quaternion.Euler(new Vector3(0.0f, playerRotation, 0.0f)); // Lerp this     
             }
@@ -329,7 +303,7 @@ public class BetterPlayerMovement : MonoBehaviour
             if (grounded == false)
             {
                 //Running
-                playerAnimator.SetInteger("CurrentState", 5);   
+                playerAnimator.SetInteger("CurrentState", 5);
             }
             else
             {
@@ -337,22 +311,13 @@ public class BetterPlayerMovement : MonoBehaviour
                 playerAnimator.SetInteger("CurrentState", 10);
             }
 
-            if (mainCam.enabled == true)
-            {
-                Vector3 movement =
-                    new Vector3(moveDirection.x, 0.0f, moveDirection.z) *
-                    (speed * Time.deltaTime); // Get current rotation
-                transform.Translate(movement, Space.World);
-            }
-            else if (splineCamera.enabled == true)
-            {
-                Vector3 movement =
-                    new Vector3(0.0f, 0.0f,  moveDirection.z) *
-                    (speed * Time.deltaTime); // Get current rotation
-                transform.Translate(movement, Space.World);
-            }
+
+            Vector3 movement =
+                new Vector3(moveDirection.x, 0.0f, moveDirection.z) *
+                (speed * Time.deltaTime); // Get current rotation
+            transform.Translate(movement, Space.World);
         }
-        else 
+        else
         {
             //Idle
             playerAnimator.SetInteger("CurrentState", 0);
@@ -368,7 +333,7 @@ public class BetterPlayerMovement : MonoBehaviour
     {
         controls.Player.Disable();
     }
-    
+
     private void OnTriggerStay(Collider other)
     {
         //Checking for Power Ups
