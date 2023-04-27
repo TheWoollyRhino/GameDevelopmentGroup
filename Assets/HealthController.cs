@@ -25,13 +25,16 @@ public class HealthController : MonoBehaviour
     private float healthBarStartWidth;
 
     
-    private MeshRenderer meshRenderer;
+    //private MeshRenderer meshRenderer;
+
+    private GameObject eye;
     
     private bool isDead;
 
     void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+        eye = GameObject.FindGameObjectWithTag("Eye");
+        //meshRenderer = GetComponent<MeshRenderer>();
         currentHealth = maxHealth;
         healthBarStartWidth = healthBar.sizeDelta.x;
         UpdateUI();
@@ -47,9 +50,10 @@ public class HealthController : MonoBehaviour
         {
             currentHealth = 0;
             isDead = true;
-            meshRenderer.enabled = false;
+            //meshRenderer.enabled = false;
             healthPanel.SetActive(false);
-
+            //eye.GetComponent<MeshRenderer>().enabled = false;
+            Destroy(gameObject);
             StartCoroutine(RespawnAfterTime());
         }
 
@@ -60,17 +64,17 @@ public class HealthController : MonoBehaviour
     private IEnumerator RespawnAfterTime() 
     {
         yield return new WaitForSeconds(respawnTime);
-        ResetHealth();
+        //ResetHealth();
     }
 
-    private void ResetHealth() 
+    /*private void ResetHealth() 
     {
         currentHealth = maxHealth;
         isDead = false;
-        meshRenderer.enabled = true;
+        //meshRenderer.enabled = true;
         healthPanel.SetActive(true);
         UpdateUI();
-    }
+    }*/
 
     private void UpdateUI()
     {
