@@ -123,6 +123,76 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &320288784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320288786}
+  - component: {fileID: 320288785}
+  m_Layer: 0
+  m_Name: Spline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &320288785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320288784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a63e2fc8173ed42a845788826974c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {x: 1, y: 0, z: 0}
+  - {x: 2, y: 0, z: 0}
+  - {x: 3, y: 0, z: 0}
+  - {x: 4, y: 0, z: 0}
+  - {x: 5, y: 0, z: 0}
+  - {x: 6, y: 0, z: 0}
+  - {x: 7, y: 0, z: 0}
+  - {x: 8, y: 0, z: 0}
+  - {x: 9, y: 0, z: 0}
+  - {x: 10, y: 0, z: 0}
+  - {x: 11, y: 0, z: 0}
+  - {x: 13.205175, y: 0, z: -0.012147427}
+  - {x: 15.737828, y: 0, z: 0.037841797}
+  - {x: 18.537838, y: 0, z: 0.09310809}
+  - {x: 17.81562, y: 0, z: -1.3118641}
+  - {x: 17.785938, y: 0, z: -3.6349912}
+  - {x: 17.752089, y: 0, z: -6.284334}
+  - {x: 17.836351, y: 0, z: -9.738166}
+  - {x: 17.768164, y: 0, z: -12.915781}
+  - {x: 17.708773, y: 0, z: -15.683456}
+  - {x: 16.745432, y: 0.6722991, z: -16.259644}
+  - {x: 15.085994, y: 1.3890663, z: -15.586872}
+  - {x: 12.895422, y: 2.3352478, z: -14.698768}
+  - {x: 11.259484, y: 2.6022, z: -14.904661}
+  - {x: 8.2738285, y: 2.2861607, z: -15.907497}
+--- !u!4 &320288786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320288784}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -74.4, y: 59.532818, z: 56.5}
+  m_LocalScale: {x: 6.659552, y: 6.659552, z: 6.659552}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &321124172
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +678,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 180, y: 90, z: 180}
+<<<<<<< HEAD
 --- !u!1 &651622002
+=======
+--- !u!1 &606164726
+>>>>>>> SplineCamera
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -616,16 +690,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 651622003}
   - component: {fileID: 651622005}
   - component: {fileID: 651622004}
   m_Layer: 0
   m_Name: 'Text '
+=======
+  - component: {fileID: 606164729}
+  - component: {fileID: 606164728}
+  - component: {fileID: 606164727}
+  - component: {fileID: 606164731}
+  - component: {fileID: 606164730}
+  m_Layer: 0
+  m_Name: Spline Trigger
+>>>>>>> SplineCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!224 &651622003
 RectTransform:
   m_ObjectHideFlags: 0
@@ -647,11 +732,15 @@ RectTransform:
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &651622004
+=======
+--- !u!114 &606164727
+>>>>>>> SplineCamera
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 651622002}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -690,10 +779,26 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!1 &653274991
 GameObject:
+=======
+  m_GameObject: {fileID: 606164726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5149cde44dcab4cb0fc5c4c644cd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 2048435522}
+  splineCamera: {fileID: 1734384419}
+  playerController: {fileID: 1345797261}
+  spline: {fileID: 320288785}
+  playerTarget: {fileID: 1090918772}
+--- !u!65 &606164728
+BoxCollider:
+>>>>>>> SplineCamera
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 653274992}
@@ -710,10 +815,22 @@ GameObject:
   m_IsActive: 1
 --- !u!224 &653274992
 RectTransform:
+=======
+  m_GameObject: {fileID: 606164726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &606164729
+Transform:
+>>>>>>> SplineCamera
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 653274991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -731,10 +848,24 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653274993
 MonoBehaviour:
+=======
+  m_GameObject: {fileID: 606164726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -90.5, y: 50.3, z: -2.6}
+  m_LocalScale: {x: 23.327147, y: 5.810479, z: 63.9075}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &606164730
+MeshFilter:
+>>>>>>> SplineCamera
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 653274991}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -748,10 +879,17 @@ MonoBehaviour:
     m_Bits: 4294967295
 --- !u!114 &653274994
 MonoBehaviour:
+=======
+  m_GameObject: {fileID: 606164726}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &606164731
+MeshRenderer:
+>>>>>>> SplineCamera
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 653274991}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -978,6 +1116,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713347428}
   m_CullTransparentMesh: 1
+=======
+  m_GameObject: {fileID: 606164726}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+>>>>>>> SplineCamera
 --- !u!1 &725058432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1900,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1099418640}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1763,6 +1940,22 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+=======
+  m_GameObject: {fileID: 837327205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -603.3, y: 119.8, z: 0}
+  m_LocalScale: {x: 50, y: 1, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1090918772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5017534650380093309, guid: b1cc94d26cd016d479aa5b522d88da0a, type: 3}
+  m_PrefabInstance: {fileID: 830163480}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> SplineCamera
 --- !u!1 &1215004224 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 629156792, guid: b1cc94d26cd016d479aa5b522d88da0a, type: 3}
@@ -1879,6 +2072,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1345797261 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2544139237188152865, guid: b1cc94d26cd016d479aa5b522d88da0a, type: 3}
+  m_PrefabInstance: {fileID: 830163480}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3d6ad3cbafb1845ad4bc4c9a8c1d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1374408854
 GameObject:
   m_ObjectHideFlags: 0
@@ -2634,7 +2838,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+<<<<<<< HEAD
 --- !u!1 &1702589243
+=======
+--- !u!1 &1734384418
+>>>>>>> SplineCamera
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2642,6 +2850,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1702589249}
   - component: {fileID: 1702589248}
   - component: {fileID: 1702589247}
@@ -2651,16 +2860,30 @@ GameObject:
   m_Layer: 0
   m_Name: Enemy (1)
   m_TagString: Enemy
+=======
+  - component: {fileID: 1734384422}
+  - component: {fileID: 1734384421}
+  - component: {fileID: 1734384420}
+  - component: {fileID: 1734384419}
+  m_Layer: 0
+  m_Name: Spline Camera
+  m_TagString: Untagged
+>>>>>>> SplineCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!114 &1702589244
+=======
+--- !u!114 &1734384419
+>>>>>>> SplineCamera
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1702589243}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2674,10 +2897,27 @@ MonoBehaviour:
   healthBar: {fileID: 1418036768}
 --- !u!114 &1702589245
 MonoBehaviour:
+=======
+  m_GameObject: {fileID: 1734384418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915223556bcc60645a0bf801812bd01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splineCamera: {fileID: 1734384421}
+  playerCamera: {fileID: 2048435522}
+  playerTarget: {fileID: 1090918772}
+  spline: {fileID: 320288785}
+  duration: 15
+  progress: 0
+--- !u!81 &1734384420
+AudioListener:
+>>>>>>> SplineCamera
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1702589243}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2690,10 +2930,17 @@ MonoBehaviour:
   damage: 30
 --- !u!65 &1702589246
 BoxCollider:
+=======
+  m_GameObject: {fileID: 1734384418}
+  m_Enabled: 0
+--- !u!20 &1734384421
+Camera:
+>>>>>>> SplineCamera
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1702589243}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2752,11 +2999,52 @@ MeshFilter:
   m_GameObject: {fileID: 1702589243}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1702589249
+=======
+  m_GameObject: {fileID: 1734384418}
+  m_Enabled: 0
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1734384422
+>>>>>>> SplineCamera
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1702589243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.36, y: 3.151161, z: -16.2}
@@ -2767,6 +3055,16 @@ Transform:
   - {fileID: 1099418641}
   m_Father: {fileID: 0}
   m_RootOrder: 26
+=======
+  m_GameObject: {fileID: 1734384418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -83.09549, y: 54.630325, z: -8.714077}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+>>>>>>> SplineCamera
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1779972465
 GameObject:
